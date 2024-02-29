@@ -4,7 +4,7 @@
 <p align="center">
   Tap Jacking is a technique where a malicious app tricks the user into clicking a security-relevant control (confirmation button etc.) by obscuring the UI with an overlay or by other means.
 
-  This plugin prevents tap jacking by calling `setFilterTouchesWhenObscured(true)` (Android 11 and below) or `` (Android 12+) as described in the [Android Developer Documentation](https://developer.android.com/privacy-and-security/risks/tapjacking).
+  This plugin prevents tap jacking by calling `setFilterTouchesWhenObscured(true)` (Android 11 and below) or `setHideOverlayWindows` (Android 12+) as described in the [Android Developer Documentation](https://developer.android.com/privacy-and-security/risks/tapjacking).
 
   On iOS and web this call does nothing.
 </p>
