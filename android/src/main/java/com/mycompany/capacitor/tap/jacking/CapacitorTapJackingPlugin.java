@@ -1,6 +1,5 @@
 package com.mycompany.capacitor.tap.jacking;
 
-import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -17,13 +16,28 @@ public class CapacitorTapJackingPlugin extends Plugin {
     public void load() {
         Activity activity = getBridge().getActivity();
         WebView webView = getBridge().getWebView();
-        implementation = new CapacitorTapJacking(activity, webView);        
+        implementation = new CapacitorTapJacking(activity, webView);
     }
 
     @PluginMethod
-    public void setFilterTouchesWhenObscured(PluginCall call) {
-        Boolean value = call.getBoolean("value");
-        implementation.setFilterTouchesWhenObscured(value);
-        call.resolve();
+    public void preventOverlays(PluginCall call) {
+      getBridge().getActivity().runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+          implementation.preventOverlays();
+          call.resolve();
+        }
+      });
+    }
+
+    @PluginMethod
+    public void enableOverlays(PluginCall call) {
+      getBridge().getActivity().runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+          implementation.enableOverlays();
+          call.resolve();
+        }
+      });
     }
 }

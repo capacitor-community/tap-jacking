@@ -5,10 +5,11 @@ import type { CapacitorTapJackingPlugin } from './definitions';
 export class CapacitorTapJackingWeb
   extends WebPlugin
   implements CapacitorTapJackingPlugin
-{
-  async setFilterTouchesWhenObscured(options: { value: boolean }): Promise<void> {
-    if (!options) {
-      console.log(`options have not been specified`);
-    }
+{  
+  async preventOverlays(): Promise<void> {
+    return Promise.resolve();
+  }
+  async enableOverlays(): Promise<void> {
+    return Promise.resolve();
   }
 }
