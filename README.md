@@ -4,7 +4,7 @@
 <p align="center">
   Tap Jacking is a technique where a malicious app tricks the user into clicking a security-relevant control (confirmation button etc.) by obscuring the UI with an overlay or by other means.
 
-  This plugin prevents tap jacking by calling `setFilterTouchesWhenObscured(true)` on a Android application as described in the [Android Developer Documentation](https://developer.android.com/privacy-and-security/risks/tapjacking).
+  This plugin prevents tap jacking by calling `setFilterTouchesWhenObscured(true)` (Android 11 and below) or `` (Android 12+) as described in the [Android Developer Documentation](https://developer.android.com/privacy-and-security/risks/tapjacking).
 
   On iOS and web this call does nothing.
 </p>
@@ -20,29 +20,35 @@ npx cap sync
 ```typescript
 import { TapJacking } from '@capacitor-community/tap-jacking';
 ...
-await TapJacking.setFilterTouchesWhenObscured({ value: true });
+await TapJacking.preventOverlays();
 ```
 
 ## API
 
 <docgen-index>
 
-* [`setFilterTouchesWhenObscured(...)`](#setfiltertoucheswhenobscured)
+* [`preventOverlays()`](#preventoverlays)
+* [`enableOverlays()`](#enableoverlays)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### setFilterTouchesWhenObscured(...)
+### preventOverlays()
 
 ```typescript
-setFilterTouchesWhenObscured(options: { value: boolean; }) => Promise<void>
+preventOverlays() => Promise<void>
 ```
 
-| Param         | Type                             |
-| ------------- | -------------------------------- |
-| **`options`** | <code>{ value: boolean; }</code> |
+--------------------
+
+
+### enableOverlays()
+
+```typescript
+enableOverlays() => Promise<void>
+```
 
 --------------------
 
