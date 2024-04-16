@@ -5,7 +5,7 @@ import type { CapacitorTapJackingPlugin } from './definitions';
 export class CapacitorTapJackingWeb
   extends WebPlugin
   implements CapacitorTapJackingPlugin
-{  
+{
   async preventOverlays(): Promise<void> {
     return Promise.resolve();
   }

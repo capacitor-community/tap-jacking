@@ -9,12 +9,12 @@ import Capacitor
 public class CapacitorTapJackingPlugin: CAPPlugin {
     private let implementation = CapacitorTapJacking()
 
-    @objc func preventOverlays(_ call: CAPPluginCall) {        
-        call.resolve();
+    @objc func preventOverlays(_ call: CAPPluginCall) {
+        call.resolve()
     }
 
-    @objc func enableOverlays(_ call: CAPPluginCall) {        
-        call.resolve();
+    @objc func enableOverlays(_ call: CAPPluginCall) {
+        call.resolve()
     }
 
 }

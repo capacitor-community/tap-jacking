@@ -1,11 +1,11 @@
 package com.mycompany.capacitor.tap.jacking;
 
+import android.app.Activity;
+import android.webkit.WebView;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import android.webkit.WebView;
-import android.app.Activity;
 
 @CapacitorPlugin(name = "TapJacking")
 public class CapacitorTapJackingPlugin extends Plugin {
@@ -21,23 +21,31 @@ public class CapacitorTapJackingPlugin extends Plugin {
 
     @PluginMethod
     public void preventOverlays(PluginCall call) {
-      getBridge().getActivity().runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-          implementation.preventOverlays();
-          call.resolve();
-        }
-      });
+        getBridge()
+            .getActivity()
+            .runOnUiThread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        implementation.preventOverlays();
+                        call.resolve();
+                    }
+                }
+            );
     }
 
     @PluginMethod
     public void enableOverlays(PluginCall call) {
-      getBridge().getActivity().runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-          implementation.enableOverlays();
-          call.resolve();
-        }
-      });
+        getBridge()
+            .getActivity()
+            .runOnUiThread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        implementation.enableOverlays();
+                        call.resolve();
+                    }
+                }
+            );
     }
 }
