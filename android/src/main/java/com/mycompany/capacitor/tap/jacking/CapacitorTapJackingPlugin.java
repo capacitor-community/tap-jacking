@@ -24,13 +24,10 @@ public class CapacitorTapJackingPlugin extends Plugin {
         getBridge()
             .getActivity()
             .runOnUiThread(
-                new Runnable() {
-                    @Override
-                    public void run() {
+                    () -> {
                         implementation.preventOverlays();
                         call.resolve();
                     }
-                }
             );
     }
 
@@ -39,13 +36,10 @@ public class CapacitorTapJackingPlugin extends Plugin {
         getBridge()
             .getActivity()
             .runOnUiThread(
-                new Runnable() {
-                    @Override
-                    public void run() {
+                    () -> {
                         implementation.enableOverlays();
                         call.resolve();
                     }
-                }
             );
     }
 }
