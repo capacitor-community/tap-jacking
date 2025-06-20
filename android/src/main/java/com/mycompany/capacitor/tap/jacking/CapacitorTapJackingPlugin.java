@@ -23,29 +23,19 @@ public class CapacitorTapJackingPlugin extends Plugin {
     public void preventOverlays(PluginCall call) {
         getBridge()
             .getActivity()
-            .runOnUiThread(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        implementation.preventOverlays();
-                        call.resolve();
-                    }
-                }
-            );
+            .runOnUiThread(() -> {
+                implementation.preventOverlays();
+                call.resolve();
+            });
     }
 
     @PluginMethod
     public void enableOverlays(PluginCall call) {
         getBridge()
             .getActivity()
-            .runOnUiThread(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        implementation.enableOverlays();
-                        call.resolve();
-                    }
-                }
-            );
+            .runOnUiThread(() -> {
+                implementation.enableOverlays();
+                call.resolve();
+            });
     }
 }
