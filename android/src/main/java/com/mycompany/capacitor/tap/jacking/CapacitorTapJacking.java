@@ -2,7 +2,6 @@ package com.mycompany.capacitor.tap.jacking;
 
 import android.app.Activity;
 import android.os.Build;
-import android.util.Log;
 import android.webkit.WebView;
 
 public class CapacitorTapJacking {
