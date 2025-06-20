@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/tap-jacking",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "Capacitor Plugin to prevent tap jacking in Android",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
